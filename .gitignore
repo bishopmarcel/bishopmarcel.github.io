@@ -1,0 +1,4 @@
+.idea/
+blog/node_modules/
+blog/public/
+blog/db.json
