@@ -45,8 +45,9 @@
         [git push origin :gh-pages]
 
 5. GitHub Pages
-		https://github.com/bishopmarcel/bishopmarcel.github.io/settings/pages
-		GitHub Pages > Build and deployment > Branch > gh-pages > Save
+        https://github.com/bishopmarcel/bishopmarcel.github.io/settings/pages
+
+        GitHub Pages > Build and deployment > Branch > gh-pages > Save
 
 5. .gitignore
         .idea/
