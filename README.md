@@ -20,8 +20,9 @@
         git clone git@github.com:bishopmarcel/bishopmarcel.github.io.git
 	
 4. Branch
-		# 切换目录
-		cd bishopmarcel.github.io
+        # 切换目录
+        cd bishopmarcel.github.io
+        
         # 新建分支
         git branch gh-pages
         
