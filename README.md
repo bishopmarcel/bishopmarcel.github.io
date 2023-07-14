@@ -49,13 +49,13 @@
 
         GitHub Pages > Build and deployment > Branch > gh-pages > Save
 
-5. .gitignore
+6. .gitignore
         .idea/
         blog/node_modules/
         blog/public/
         blog/db.json
 
-6. Hexo
+7. Hexo
         npm install hexo-cli -g
         hexo init blog
         cd blog
@@ -81,6 +81,9 @@
         # 简写
         [hexo g -d]
         
- 8. Visit site
+8. Visit site
         https://bishopmarcel.github.io/
+        
+9. New
+        hexo new javascript-hook 
 ~~~
