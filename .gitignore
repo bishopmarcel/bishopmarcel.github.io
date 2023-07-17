@@ -2,3 +2,6 @@
 blog/node_modules/
 blog/public/
 blog/db.json
+
+src/ast/node_modules/
+src/ast/package-lock.json
