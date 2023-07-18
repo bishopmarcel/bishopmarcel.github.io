@@ -159,3 +159,159 @@ jsfuck
 
 
 数组乱序
+
+打乱顺序
+
+![img.png](images/ast/img_9.png)
+
+还原顺序
+
+![img.png](images/ast/img_10.png)
+
+最终代码
+
+![img.png](images/ast/img_11.png)
+
+
+花指令
+
+给代码中添加一些没有意义的代码
+
+二项式转函数的花指令
+
+![img.png](images/ast/img_12.png)
+
+![img.png](images/ast/img_13.png)
+
+![img.png](images/ast/img_14.png)
+
+函数调用表达式处理成花指令
+
+![img.png](images/ast/img_15.png)
+
+
+jsfuck
+
+在fuckjs的混淆中，通常使用括号来分组，这是很重要的突破口。当fuckjs整体无法在控制台还原出来的时候，可以根据括号来分段处理。
+
+~~~javascript
+// js中7种值表是假值，其余均为真值
+false, undefined, null, 0, -0, NaN, ""
+
++[]
+// 数组转数值 0
+
+!+[]
+// 数值转逻辑 true
+
+!![]
+// true
+
+(!+[]) + (!![])
+// +号两边都不是字符串，所以进行数值相加操作，逻辑转数值 2
+
+
+"".italics()
+// '<i></i>'
+
+escape('<i></i>')
+// '%3Ci%3E%3C/i%3E'
+
+~~~
+
+处理前
+
+![img.png](images/ast/img_16.png)
+
+处理后
+
+![img.png](images/ast/img_17.png)
+
+
+JavaScript代码安全防护原理
+
+1. 流程平坦化
+2. 逗号表达式混淆
+
+流程平坦化
+
+处理前
+
+![img.png](images/ast/img_18.png)
+
+处理中
+
+![img.png](images/ast/img_19.png)
+
+处理后
+
+![img.png](images/ast/img_20.png)
+
+最终结果
+
+![img.png](images/ast/img_21.png)
+
+![img.png](images/ast/img_22.png)
+
+
+
+逗号表达式混淆
+
+把多个表达式或语句连接成一个复合语句
+
+![img.png](images/ast/img_22.png)
+
+![img.png](images/ast/img_23.png)
+
+![img.png](images/ast/img_24.png)
+
+![img.png](images/ast/img_25.png)
+
+逗号连接多个表达式，会返回最后一个（最右边一个）表达式计算之后的结果
+
+![img.png](images/ast/img_26.png)
+
+![img.png](images/ast/img_27.png)
+
+
+![img.png](images/ast/img_28.png)
+
+~~~javascript
+function test() {
+  var a = 1;
+  var b = a + 2;
+  var c = b + 3;
+  var d = c + 4;
+  var e = d + 5;
+  var f = e + 6;
+  return f;
+}
+
+console.log(test());
+
+var a, b, c;
+c = ((b = ((a = 1), a + 2)), b + 3);
+
+var a, b, c;
+c = (b = ((a = 1), a + 2)) + 3;
+
+var a, b, c;
+c = (((b = ((a = 1), a + 2)), b) + 3, c);
+
+~~~
+
+![img.png](images/ast/img_29.png)
+
+最终效果
+
+![img.png](images/ast/img_30.png)
+
+
+案例
+![img.png](images/ast/img_31.png)
+
+
+![img.png](images/ast/img_32.png)
+![img.png](images/ast/img_33.png)
+![img.png](images/ast/img_34.png)
+
